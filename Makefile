@@ -1,6 +1,6 @@
 CC		=g++
 MAIN	=main
-FLAGS	=-Wall -O3
+FLAGS	=-O3
 
 .PHONY:clean
 all:$(MAIN)

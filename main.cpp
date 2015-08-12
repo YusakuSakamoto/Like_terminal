@@ -1,15 +1,17 @@
-#define __RASPBERRY_PI__
+#define __RASPBERRY_PI__1
 
 #ifdef __RASPBERRY_PI__
 #define NAME_COLOR1 "\x1b[1m\x1b[32m"
 #define NAME_COLOR2 "\x1b[1m\x1b[34m"
 #define NAME_STRING "pi@raspberrypi"
+#define USER_NAME "/home/pi"
 #endif
 
 #ifndef __RASPBERRY_PI__
 #define NAME_COLOR1 "\x1b[39m"
 #define NAME_COLOR2 "\x1b[39m"
 #define NAME_STRING "sakamoto@sakamoto-CF=AX2SDLTC"
+#define USER_NAME "/home/sakamoto"
 #endif
 
 #include <fstream>
@@ -54,7 +56,6 @@ int main(void)
   int flag;
   char pwd[PATH_SIZE];
   char input[500];
-  const char USER_NAME[9] = "/home/pi";
 
   getcwd(pwd,PATH_SIZE);
 
@@ -66,15 +67,11 @@ int main(void)
 	name_size = strlen(USER_NAME);
 	pwd_size = strlen(pwd);
 
-	printf("\x1b[39m");
-	printf("前景色がデフォルト\n");
-
 	cout << NAME_COLOR2 << " ~";
 	for(i=name_size; i<pwd_size ;i++){
 	  printf("%c",pwd[i]);
 	}
 	printf(" $ \x1b[39m");
-
 
 	gets(input);
 	if(input[0]!='\0'){
