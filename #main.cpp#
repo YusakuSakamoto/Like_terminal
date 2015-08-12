@@ -18,7 +18,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
 
 #define STARTUP_FILE "startup.txt"
 #define PATH_SIZE 512
@@ -66,9 +65,11 @@ int main(void)
 	name_size = strlen(USER_NAME);
 	pwd_size = strlen(pwd);
 
-	printf("\x1b[39m");
-	printf("前景色がデフォルト\n");
+<<<<<<< HEAD
+  printf("\x1b[39m");
+  printf("前景色がデフォルト\n");
 
+=======
 	cout << NAME_COLOR2 << " ~";
 	for(i=name_size; i<pwd_size ;i++){
 	  printf("%c",pwd[i]);
