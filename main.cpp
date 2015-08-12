@@ -69,9 +69,6 @@ int main(void)
 
   while(!getchar())
 
-
-
-
   printf("\x1b[39m");
   printf("前景色がデフォルト\n");
 
