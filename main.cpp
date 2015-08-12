@@ -50,31 +50,35 @@ int main(void)
   int i=0;
   int name_size;
   int pwd_size;
+  int flag;
   char pwd[PATH_SIZE];
+  char input[500];
   const char USER_NAME[9] = "/home/pi";
 
   getcwd(pwd,PATH_SIZE);
 
-  printf("%s%s",NAME_COLOR1,NAME_STRING);
+  flag=0;
+  while(flag==0){
 
-  name_size = strlen(USER_NAME);
-  pwd_size = strlen(pwd);
+	cout << NAME_COLOR1 << NAME_STRING;
 
-  printf("%s",NAME_COLOR2);
-  printf(" ~");
-  for(i=name_size; i<pwd_size ;i++){
-	printf("%c",pwd[i]);
+	name_size = strlen(USER_NAME);
+	pwd_size = strlen(pwd);
+
+	cout << NAME_COLOR2 << " ~";
+	for(i=name_size; i<pwd_size ;i++){
+	  printf("%c",pwd[i]);
+	}
+	printf(" $ \x1b[39m");
+
+
+	gets(input);
+	if(input[0]!='\0'){
+	  flag=1;
+	}
   }
-  printf(" $ \n");
 
-  while(!getchar())
-
-
-
-
-  printf("\x1b[39m");
-  printf("前景色がデフォルト\n");
-
+  printf("%s\n",input);
   end();
 
   return 0;
