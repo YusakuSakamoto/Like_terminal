@@ -6,5 +6,5 @@
 擬似端末のようにしよう、というのが、最初のコンセプトです。
 
 ##How to install
-make
-sudo make install
+make  
+sudo make install  
