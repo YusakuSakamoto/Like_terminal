@@ -28,4 +28,5 @@
 using namespace std;
 
 int startup(void);
+int help(void);
 int end(void);

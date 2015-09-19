@@ -1,15 +1,11 @@
 CC	=g++
-MAIN	=main
+TARGET = sample
+OBJ = $(TARGET:%.cpp=%)
 CFLAGS	=`pkg-config sakamoto --cflags --libs`
 
 .PHONY:clean
-all:$(MAIN)
-
-$(MAIN).o:$(MAIN).cpp
-	$(CC) -c $< $(FLAGS) $(CFLAGS) -o $@
-
-$(MAIN):$(MAIN).o
-	$(CC) $< $(FLAGS) $(CFLAGS) -o $@
+all:./src/$(TARGET).cpp
+	$(CC) $< $(FLAGS) $(CFLAGS) -o $(TARGET)
 
 clean:
-	rm $(MAIN) $(MAIN).o
+	rm $(TARGET)
